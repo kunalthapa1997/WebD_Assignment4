@@ -145,6 +145,8 @@ form.addEventListener("submit", e => {
 
     alert("Details have been uploaded to the table!");
     form.reset();
+    textReason.style.display = "none";
+    dynamicCheckbox.style.display = "none";
     validatationBool = false;
     document.getElementById("tableDiv").classList.remove("hideTable");
   } else {
@@ -475,3 +477,32 @@ ratingSelect.onchange = (e) => {
 }
 
 // End Block
+
+// Function to reset all the fields of the form
+function resetForm() {
+
+    let phoneNumberError = document.querySelector("#phone-number-error");
+    let emailError = document.querySelector("#email-error");
+    let zipCodeError = document.querySelector("#zip-code-error");
+
+    document.getElementById("miss").checked = false;
+    document.getElementById("mr").checked = false;
+    document.getElementById("mrs").checked = false;
+    document.getElementById("firstName").value = "";
+    document.getElementById("lastName").value = "";
+    document.getElementById("emailId").value = "";
+    document.getElementById("phoneNumber").value = "";
+    document.getElementById("streetAddress1").value = "";
+    document.getElementById("streetAddress2").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("state").value = "";
+    document.getElementById("zipcode").value = "";
+    document.getElementById("comments").value = "";
+    document.getElementById("rating").value = "select";
+
+    textReason.style.display = "none";
+    dynamicCheckbox.style.display = "none";
+    zipCodeError.textContent = "";
+    emailError.textContent = "";
+    phoneNumberError.textContent = "";
+  }
